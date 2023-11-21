@@ -1,0 +1,9 @@
+.Introduction {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    @media (width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
+}
