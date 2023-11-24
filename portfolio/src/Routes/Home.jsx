@@ -4,7 +4,7 @@ import "./Styles/Home.css";
 import "./Styles/Navbar.css";
 import About from "./About";
 import Projects from "./Projects";
-import Snipplets from "./ContactMe";
+import ContactMe from "./ContactMe";
 
 export default function Home() {
   return (
@@ -29,7 +29,7 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link to="snipplets" smooth={true} duration={500}>
+                <Link to="ContactMe" smooth={true} duration={500}>
                   CSS
                 </Link>
               </li>
@@ -41,7 +41,7 @@ export default function Home() {
         <div id="" className="content">
           <About />
           <Projects />
-          <Snipplets />
+          <ContactMe />
         </div>
     </div>
   );
