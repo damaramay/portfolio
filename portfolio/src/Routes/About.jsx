@@ -40,7 +40,7 @@ export default function About() {
         </span>
       </div>
       <div id="image-about">
-        <img src="../../public/2023-11-24_03-33-15_8471.png" alt="" />
+        <img src="/public/2023-11-24_03-33-15_8471.png" alt="" />
       </div>
     </div>
   );
