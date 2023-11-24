@@ -1,20 +1,21 @@
 import React from "react";
 import { Link } from "react-scroll";
 
-const Navbar = () => {
+const Navbar = ( ) => {
+
   return (
     <div id="header">
       <header>
         <nav>
           <ul>
             <li>
-              <Link to="Home" smooth={true} duration={500}>
+              <Link to="home" smooth={true} duration={500}>
                 Home
               </Link>
             </li>
 
             <li>
-              <Link to="About" smooth={true} duration={500}>
+              <Link to="about" smooth={true} duration={500} >
                 About
               </Link>
             </li>
@@ -26,8 +27,8 @@ const Navbar = () => {
             </li>
 
             <li>
-              <Link to="Snipplets" smooth={true} duration={500}>
-                My Snipplets
+              <Link to="snipplets" smooth={true} duration={500}>
+                CSS
               </Link>
             </li>
           </ul>

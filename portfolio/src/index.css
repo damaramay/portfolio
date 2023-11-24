@@ -1,60 +1,67 @@
 html {
-    scroll-behavior: smooth;
-    --text: #fff;
-    background-color: #01111e;
+  scroll-behavior: smooth;
+  --text: #fff;
+  background-color: #01111e;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Epilogue", sans-serif;
+  font-family: "Epilogue", sans-serif;
+  background-color: #090909;
+  color: white;
+  height: 100vh;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 2px solid white; */
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
-    position: sticky;
-    top: 0;
-    width: 400px;
-    color: black;
-    padding: 10px 0;
-    text-align: center;
-    display: flex;
-    justify-content: space-around;
-    border-radius: 5rem;
-    backdrop-filter: blur(4px);
-    background-color: rgba(95, 91, 91, 0.5);
-    z-index: 2; /* Ensure it's above other elements */
+  top: 0;
+  width: 400px;
+  color: black;
+  padding: 10px 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5rem;
+  backdrop-filter: blur(4px);
+  background-color: rgba(95, 91, 91, 0.5);
+  /* z-index: 100; */
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
 }
 
 nav ul li {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 a {
-    text-decoration: none;
-    color: var(--text);
+  text-decoration: none;
+  color: var(--text);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text);
-    margin: 0;
-    padding: 10px;
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  margin: 0;
+  padding: 10px;
 }
