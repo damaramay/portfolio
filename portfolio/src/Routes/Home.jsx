@@ -1,26 +1,48 @@
-import { useRef } from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { Link } from "react-scroll";
+
 import "./Styles/Home.css";
+import "./Styles/Navbar.css";
 import About from "./About";
 import Projects from "./Projects";
-import Snipplets from "./Snipplets";
-import Navbar from "./Components/Navbar";
+import Snipplets from "./ContactMe";
 
 export default function Home() {
-
-
   return (
-    <div>
-      <Parallax pages={4} >
-        <ParallaxLayer sticky={{ start: 0, end: 4 }} style={{ textAlign: "center" }}>
-          <Navbar />
-        </ParallaxLayer>
+    <div id="home" className="container">
+      <div id="header" className="header">
+        <header>
+          <nav>
+            <ul>
+              <li>
+                <Link to="" smooth={true} duration={500}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="about" smooth={true} duration={500}>
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="projects" smooth={true} duration={500}>
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link to="snipplets" smooth={true} duration={500}>
+                  CSS
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
 
-        <ParallaxLayer offset={0.2} speed={0.5} >
+        <div id="" className="content">
           <About />
-        </ParallaxLayer>
-      </Parallax>
-      
+          <Projects />
+          <Snipplets />
+        </div>
     </div>
   );
 }

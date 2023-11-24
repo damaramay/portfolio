@@ -1,12 +1,32 @@
 import React from "react";
 import "./Styles/About.css";
+import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf"
+import { Link } from "react-router-dom";
 
 export default function About() {
   
   const redirectToLink = () => {
-    // window.location.href = "https://wa.link/fllqnm";
+    window.location.href = "https://wa.link/fllqnm";
     console.log("Contact Me Button clicked!");
   };
+
+    const handleDownload = () => {
+      const link = document.createElement("a");
+  
+      // Membuat URL data dari file PDF
+      fetch(MyResumePDF)
+        .then((response) => response.blob())
+        .then((blob) => {
+          const url = URL.createObjectURL(blob);
+          link.href = url;
+          link.download = "Damara-Hamonangan-akbar-Resume.pdf"; // Nama file yang akan diunduh
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          URL.revokeObjectURL(url); // Membersihkan URL data setelah pengunduhan
+        });
+    };
+  
 
   return (
     <div id="about" className="about">
@@ -33,8 +53,9 @@ export default function About() {
           </div>
         </span>
         <br />
-        <a href="#" onClick={() => {console.log("clicked")}}>Contact Me</a>
-        <button>Resume</button>
+        <button onClick={redirectToLink}>Contact Me</button>
+        <button onClick={handleDownload}>Resume</button>
+        <Link to="/about">Read More</Link>
         <span className="reveal-text" style={{ "--delay": ".9s" }}>
           Specialize in crafting captivating web and mobile interfaces to deliver flawless digital experiences.
         </span>
