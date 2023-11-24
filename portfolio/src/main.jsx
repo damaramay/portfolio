@@ -8,7 +8,7 @@ import "./index.css";
 import Home from "./Routes/Home"
 import About from "./Routes/About"
 import Projects from "./Routes/Projects";
-import Snipplets from "./Routes/Snipplets";
+import ContactMe from "./Routes/ContactMe";
 import ErrorPage from "./error-page";
 
 const router = createBrowserRouter([

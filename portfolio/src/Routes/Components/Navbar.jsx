@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
+import "../Styles/Navbar.css"
 
 const Navbar = ( ) => {
 
   return (
-    <div id="header">
+    <div id="header" className="header">
       <header>
         <nav>
           <ul>
             <li>
-              <Link to="home" smooth={true} duration={500}>
+              <Link to="" smooth={true} duration={500}>
                 Home
               </Link>
             </li>
