@@ -28,8 +28,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/Snipplets",
-    element: <Snipplets/>,
+    path: "/ContactMe",
+    element: <ContactMe/>,
     errorElement: <ErrorPage />,
   },
 ]);

@@ -28,7 +28,7 @@ const Navbar = ( ) => {
             </li>
 
             <li>
-              <Link to="snipplets" smooth={true} duration={500}>
+              <Link to="ContactMe" smooth={true} duration={500}>
                 CSS
               </Link>
             </li>
