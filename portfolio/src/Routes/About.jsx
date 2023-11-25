@@ -1,6 +1,7 @@
 import React from "react";
 import "./Styles/About.css";
 import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf"
+import MyPhoto from "../../public/2023-11-24_03-33-15_8471.png"
 import { Link } from "react-router-dom";
 
 export default function About() {
@@ -61,7 +62,7 @@ export default function About() {
         </span>
       </div>
       <div id="image-about">
-        <img src="/public/2023-11-24_03-33-15_8471.png" alt="" />
+        <img src={MyPhoto} alt="" />
       </div>
     </div>
   );
