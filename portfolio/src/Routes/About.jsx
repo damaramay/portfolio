@@ -1,7 +1,7 @@
 import React from "react";
 import "./Styles/About.css";
 import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf"
-import MyPhoto from "../../public/2023-11-24_03-33-15_8471.png"
+import MyPhoto from "../../public/linkedinPhoto-transformed.jpeg"
 import { Link } from "react-router-dom";
 
 export default function About() {
