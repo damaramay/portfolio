@@ -1,33 +1,32 @@
 import React from "react";
 import "./Styles/About.css";
-import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf"
-import MyPhoto from "../../public/linkedinPhoto-transformed.jpeg"
-import { Link } from "react-router-dom";
+import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf";
+import MyPhoto from "../../public/linkedinPhoto-transformed.jpeg";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 export default function About() {
-  
   const redirectToLink = () => {
     window.location.href = "https://wa.link/fllqnm";
     console.log("Contact Me Button clicked!");
   };
 
-    const handleDownload = () => {
-      const link = document.createElement("a");
-  
-      // Membuat URL data dari file PDF
-      fetch(MyResumePDF)
-        .then((response) => response.blob())
-        .then((blob) => {
-          const url = URL.createObjectURL(blob);
-          link.href = url;
-          link.download = "Damara-Hamonangan-akbar-Resume.pdf"; // Nama file yang akan diunduh
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          URL.revokeObjectURL(url); // Membersihkan URL data setelah pengunduhan
-        });
-    };
-  
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    fetch(MyResumePDF)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const url = URL.createObjectURL(blob);
+        link.href = url;
+        link.download = "Damara-Hamonangan-akbar-Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      });
+  };
 
   return (
     <div id="about" className="about">
@@ -54,9 +53,75 @@ export default function About() {
           </div>
         </span>
         <br />
-        <button onClick={redirectToLink}>Contact Me</button>
-        <button onClick={handleDownload}>Resume</button>
-        <Link to="/about">Read More</Link>
+        <button  onClick={() => {
+            let timerInterval;
+            Swal.fire({
+              title: "Auto close alert!",
+              html: "Contacting Damara in <b></b> milliseconds. Don't forget to say Hi!",
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                  timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+              },
+              willClose: () => {
+                clearInterval(timerInterval);
+              },
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+                redirectToLink()
+              }
+            });
+          }}>Contact Me</button>
+        <button
+          onClick={() => {
+            Swal.fire({
+              title: "Do you want to save the Resume in PDF?",
+              showDenyButton: true,
+              showCancelButton: true,
+              confirmButtonText: "Save",
+              denyButtonText: `Don't save`,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                Swal.fire("Saved!", handleDownload(), "success");
+              } else if (result.isDenied) {
+                Swal.fire("Download Canceled", "If you want to see more than my resume, please check my LinkedIn", "error");
+              }
+            });
+          }}
+        >
+          Resume
+        </button>
+        <button
+          onClick={() => {
+            let timerInterval;
+            Swal.fire({
+              title: "Auto close alert!",
+              html: "Opening Damara H.A LinkedIn in <b></b> milliseconds.",
+              timer: 2000,
+              timerProgressBar: true,
+              didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                  timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+              },
+              willClose: () => {
+                clearInterval(timerInterval);
+              },
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = "https://www.linkedin.com/in/damaraharahap";
+              }
+            });
+          }}
+        >
+          LinkedIn
+        </button>
         <span className="reveal-text" style={{ "--delay": ".9s" }}>
           Specialize in crafting captivating web and mobile interfaces to deliver flawless digital experiences.
         </span>
