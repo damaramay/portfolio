@@ -49,7 +49,7 @@ export default function Home() {
         </header>
       </div>
 
-      <div id="" className="content" data-aos="fade-up">
+      <div id="" className="content">
         <About />
         <div id="summary" className="summary" data-aos="fade-up">
           <div className="tracking-in-expand-fwd">
