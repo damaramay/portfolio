@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./Styles/Projects.css";
+import helpingHand from "../../public/helpingHand.jpg";
+import linkedun from  "../../public/Screenshot 2023-12-01 135348.png"
 
 export default function Projects() {
   const [toggle, setToggle] = useState(1);
 
   function updateToggle(id) {
-    setToggle(id)
+    setToggle(id);
   }
 
   return (
@@ -30,8 +32,26 @@ export default function Projects() {
           </ul>
         </div>
         <p>Becoming a passionate programmer is an ever-evolving journey, and just like this portfolio, the adventure is bound to be a continuous expansion.</p>
-        <div className={toggle === 1 ? "show-content" : "project-content"}>project-content 1</div>
-        <div className={toggle === 2 ? "show-content" : "project-content"}>project-content 2</div>
+        <div id="pastProjects" className={toggle === 1 ? "show-content" : "project-content"}>
+          <div className="image-gallery">
+            <img src={helpingHand} alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div id="onGoingProjects" className={toggle === 2 ? "show-content" : "project-content"}>
+          <div className="image-gallery">
+            <img src={linkedun} alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+          </div>
+        </div>
       </div>
     </>
   );
