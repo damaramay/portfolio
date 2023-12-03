@@ -27,4 +27,5 @@ h6 {
   color: var(--text);
   margin: 0;
   padding: 10px;
+  user-select: none;
 }

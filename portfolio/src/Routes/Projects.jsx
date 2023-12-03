@@ -1,11 +1,17 @@
 import { useState } from "react";
 import "./Styles/Projects.css";
+import helpingHand from "../../public/helpingHand.jpg";
+import linkedun from "../../public/Screenshot 2023-12-01 135348.png";
+import webPorto from "../../public/WhatsApp Image 2023-12-03 at 09.44.31_1bf5ab5c.jpg";
+import tiktok from "../../public/1.jpg";
+import youtube from "../../public/2.jpg";
+import ecomers from "../../public/3.jpg";
 
 export default function Projects() {
   const [toggle, setToggle] = useState(1);
 
   function updateToggle(id) {
-    setToggle(id)
+    setToggle(id);
   }
 
   return (
@@ -30,8 +36,33 @@ export default function Projects() {
           </ul>
         </div>
         <p>Becoming a passionate programmer is an ever-evolving journey, and just like this portfolio, the adventure is bound to be a continuous expansion.</p>
-        <div className={toggle === 1 ? "show-content" : "project-content"}>project-content 1</div>
-        <div className={toggle === 2 ? "show-content" : "project-content"}>project-content 2</div>
+        <div id="pastProjects" className={toggle === 1 ? "show-content" : "project-content"}>
+          <div className="image-gallery">
+            <a href="https://github.com/Helping-Hand-Hacktiv8">
+              <img src={helpingHand} alt="" />
+            </a>
+            <a href="https://github.com/damaramay/portfolio" target="_blank">
+              <img src={webPorto} alt="" />
+            </a>
+          </div>
+        </div>
+        <div id="onGoingProjects" className={toggle === 2 ? "show-content" : "project-content"}>
+          <div className="image-gallery">
+            <a href="https://github.com/damaramay/Linkedun" target="_blank">
+              <img src={linkedun} alt="" />
+              {/* <h1>Testing</h1> */}
+            </a>
+            <a href="https://github.com/damaramay/Tiktuk" target="_blank">
+              <img src={tiktok} alt="" />
+            </a>
+            <a href="https://github.com/damaramay/Youtrube" target="_blank">
+              <img src={youtube} alt="" />
+            </a>
+            <a href="https://github.com/damaramay/Ecomurz" target="_blank">
+              <img src={ecomers} alt="" />
+            </a>
+          </div>
+        </div>
       </div>
     </>
   );
