@@ -3,6 +3,7 @@ import "./Styles/Home.css";
 import "./Styles/Navbar.css";
 import About from "./About";
 import Projects from "./Projects";
+import MySkill from "./MySkill"
 import ContactMe from "./ContactMe";
 import skillImgFe from "../../public/skillBarImgFE.svg";
 import skillImgBE from "../../public/skillBarImgBE.svg";
@@ -84,7 +85,8 @@ export default function Home() {
           </div>
         </div>
         <Projects />
-        <ContactMe />
+        {/* <MySkill /> */}
+        {/* <ContactMe /> */}
       </div>
     </div>
   );
