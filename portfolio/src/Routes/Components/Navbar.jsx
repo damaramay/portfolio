@@ -27,11 +27,6 @@ const Navbar = ( ) => {
               </Link>
             </li>
 
-            <li>
-              <Link to="ContactMe" smooth={true} duration={500}>
-                CSS
-              </Link>
-            </li>
           </ul>
         </nav>
       </header>
