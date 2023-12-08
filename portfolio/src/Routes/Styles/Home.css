@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+/* .about {
+  height: 100vh;
+  padding-top: 70px;
+  border: 4px solid white;
+} */
+
 .summary {
   display: flex;
   flex-direction: column;
