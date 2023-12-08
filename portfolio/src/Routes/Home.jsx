@@ -1,9 +1,9 @@
-import { Link } from "react-scroll";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import "./Styles/Home.css";
 import "./Styles/Navbar.css";
 import About from "./About";
 import Projects from "./Projects";
-import MySkill from "./MySkill"
+import MySkill from "./MySkill";
 import ContactMe from "./ContactMe";
 import skillImgFe from "../../public/skillBarImgFE.svg";
 import skillImgBE from "../../public/skillBarImgBE.svg";
@@ -12,11 +12,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-
 export default function Home() {
-  
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 900 });
   }, []);
 
   return (
@@ -26,32 +24,35 @@ export default function Home() {
           <nav>
             <ul>
               <li>
-                <Link to="" smooth={true} duration={500}>
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="about" smooth={true} duration={500}>
+                <ScrollLink to="about" smooth={true} duration={500}>
                   About
-                </Link>
+                </ScrollLink>
               </li>
               <li>
-                <Link to="projects" smooth={true} duration={500}>
+                <ScrollLink to="projects" smooth={true} duration={500}>
                   Projects
-                </Link>
+                </ScrollLink>
               </li>
+
               <li>
-                <Link to="ContactMe" smooth={true} duration={500}>
-                  CSS
-                </Link>
+                <ScrollLink to="mySkill" smooth={true} duration={500}>
+                  My Skills
+                </ScrollLink>
               </li>
+              {/* <li>
+                <ScrollLink to="ContactMe" smooth={true} duration={500}>
+                  CSS
+                </ScrollLink>
+              </li> */}
             </ul>
           </nav>
         </header>
       </div>
 
-      <div id="" className="content">
-        <About />
+      <div id="About" className="content">
+        <div id="" className="About">
+          <About />
+        </div>
         <div id="summary" className="summary" data-aos="fade-up">
           <div className="tracking-in-expand-fwd">
             <h1>What I Do</h1>
@@ -60,22 +61,22 @@ export default function Home() {
               experience with both SQL databases like PostgreSQL and NoSQL databases like MongoDB.
             </p>
           </div>
-          <div className="skillBars">
-            <div className="skillBar">
+          <div className="skillBars" data-aos="fade-up">
+            <div className="skillBar" data-aos="fade-up">
               <img src={skillImgFe} alt="FrontEnd" />
               <div className="skillBarText">
                 <h2>Front-End Development</h2>
                 <p>Expertise in building user interfaces with HTML, CSS, and JavaScript. Proficient in React and Vue for creating dynamic and interactive web applications.</p>
               </div>
             </div>
-            <div className="skillBar">
+            <div className="skillBar" data-aos="fade-up">
               <img src={skillImgBE} alt="BackEnd" />
               <div className="skillBarText">
                 <h2>Back-End Development</h2>
                 <p>Experience in server-side programming using Node.js and Express.js. Skilled in database management with PostgreSQL and MongoDB. Proficient in testing with Jest for ensuring code quality and reliability.</p>
               </div>
             </div>
-            <div className="skillBar">
+            <div className="skillBar" data-aos="fade-up">
               <img src={skillImgFS} alt="FullStack" />
               <div className="skillBarText">
                 <h2>Full-stack Development</h2>
@@ -84,9 +85,13 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Projects />
-        {/* <MySkill /> */}
-        {/* <ContactMe /> */}
+        <div id="mySkill" data-aos="fade-up">
+          <MySkill />
+        </div>
+        <div id="projects" data-aos="fade-up">
+          <Projects />
+        </div>
+        <div data-aos="fade-up">{/* <ContactMe /> */}</div>
       </div>
     </div>
   );

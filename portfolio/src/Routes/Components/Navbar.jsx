@@ -26,7 +26,6 @@ const Navbar = ( ) => {
                 Projects
               </Link>
             </li>
-
           </ul>
         </nav>
       </header>
