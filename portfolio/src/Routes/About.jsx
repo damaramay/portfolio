@@ -1,11 +1,7 @@
-import React from "react";
-import "./Styles/About.css";
-import MyResumePDF from "../../public/CV Damara Hamonangan Akbar.pdf";
-import MyPhoto from "../../public/linkedinPhoto-transformed.jpeg";
+/* eslint-disable react/no-unescaped-entities */
+import MyResumePDF from "../Documents/CV Damara Hamonangan Akbar.pdf";
+import MyPhoto from "../Portfolio-images/profilepicture.jpg";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
-const MySwal = withReactContent(Swal);
 
 export default function About() {
   const redirectToLink = () => {
@@ -53,29 +49,29 @@ export default function About() {
           </div>
         </span>
         <br />
-        <button  onClick={() => {
-            let timerInterval;
-            Swal.fire({
-              title: "Auto close alert!",
-              html: "Contacting Damara in <b></b> milliseconds. Don't forget to say Hi!",
-              timer: 2000,
-              timerProgressBar: true,
-              didOpen: () => {
-                Swal.showLoading();
-                const timer = Swal.getPopup().querySelector("b");
-                timerInterval = setInterval(() => {
-                  timer.textContent = `${Swal.getTimerLeft()}`;
-                }, 100);
-              },
-              willClose: () => {
-                clearInterval(timerInterval);
-              },
-            }).then((result) => {
-              if (result.dismiss === Swal.DismissReason.timer) {
-                redirectToLink()
-              }
-            });
-          }}>Contact Me</button>
+        <button onClick={() => {
+          let timerInterval;
+          Swal.fire({
+            title: "Auto close alert!",
+            html: "Contacting Damara in <b></b> milliseconds. Don't forget to say Hi!",
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+              Swal.showLoading();
+              const timer = Swal.getPopup().querySelector("b");
+              timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+              }, 100);
+            },
+            willClose: () => {
+              clearInterval(timerInterval);
+            },
+          }).then((result) => {
+            if (result.dismiss === Swal.DismissReason.timer) {
+              redirectToLink()
+            }
+          });
+        }}>Contact Me</button>
         <button
           onClick={() => {
             Swal.fire({

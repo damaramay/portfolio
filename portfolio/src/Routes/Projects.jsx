@@ -1,11 +1,11 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useState } from "react";
-import "./Styles/Projects.css";
-import helpingHand from "../../public/helpingHand.jpg";
-import linkedun from "../../public/Screenshot 2023-12-01 135348.png";
-import webPorto from "../../public/WhatsApp Image 2023-12-03 at 09.44.31_1bf5ab5c.jpg";
-import tiktok from "../../public/1.jpg";
-import youtube from "../../public/2.jpg";
-import ecomers from "../../public/3.jpg";
+import helpingHand from "../Portfolio-images/helpingHand.jpg";
+import linkedun from "../Portfolio-images/Screenshot 2023-12-01 135348.png";
+import webPorto from "../Portfolio-images/WhatsApp Image 2023-12-03 at 09.44.31_1bf5ab5c.jpg";
+import tiktok from "../Portfolio-images/1.jpg";
+import youtube from "../Portfolio-images/2.jpg";
+import ecomers from "../Portfolio-images/3.jpg";
 
 export default function Projects() {
   const [toggle, setToggle] = useState(1);
