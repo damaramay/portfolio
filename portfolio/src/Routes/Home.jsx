@@ -1,13 +1,12 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
-import "./Styles/Home.css";
-import "./Styles/Navbar.css";
 import About from "./About";
 import Projects from "./Projects";
 import MySkill from "./MySkill";
-import ContactMe from "./ContactMe";
-import skillImgFe from "../../public/skillBarImgFE.svg";
-import skillImgBE from "../../public/skillBarImgBE.svg";
-import skillImgFS from "../../public/skillBarImgFS.svg";
+import skillImgFe from "../Portfolio-images/skillBarImgFE.svg";
+import skillImgBE from "../Portfolio-images/skillBarImgBE.svg";
+import skillImgFS from "../Portfolio-images/skillBarImgFS.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
